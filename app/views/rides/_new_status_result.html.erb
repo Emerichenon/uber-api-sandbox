@@ -1,0 +1,11 @@
+<h3>Your Uber is <%= response.status %></h3>
+<br>
+<p>id : <%= response.request_id %></p>
+<p>status : <%= response.status %></p>
+<% if response.driver %>
+  <p>your driver : <%= response.driver.name %> (<%= response.driver.rating %> <i class="fa fa-star" aria-hidden="true"></i>)</p>
+<% end %>
+<p>ETA : <%= response.eta %></p>
+<% if response.vehicle %>
+  <p>vehicle : <%= response.vehicle.make %> <%= response.vehicle.model %></p>
+<% end %>

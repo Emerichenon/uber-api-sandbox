@@ -6,13 +6,13 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'e24740ecf5cff2a23b3c0f9182c78f3d3bf7c3ad5a36e1f6ab07d0f30c05e15d47bdcd6f86aa793e932632fca3a5b4bb6826cade9b6ee5495360abe1996ccc0c'
+  # config.secret_key = 'c83fba76cf7c9c8bd52231ccea6c7393c9c34aca5980ceb07805911ff82a0786f5a60c618c5a5dc8157beb3ac3d2e89b132b4cb96521652ee589fd400d55b9b0'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'emeric.henon@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '375cba35ffb8c1a32f9812d4421565dbc722f3ee32840b731b03fd1ef167f42400df8ad4afce7c361b5dadb4dea2b7fe4ba3abffc09a584982ef5fa74790f8aa'
+  # config.pepper = 'bd9cb5e408427cc6d474b5c81866e1d030a0f050fb9083fe60323c0026ba10e72b7b6852bb743e3d26feedd6c5523dbacdc5df14a47389b9af5716c8b15497fc'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
@@ -271,4 +271,26 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  # Fb Connect
+  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
+    scope: 'email',
+    info_fields: 'email, first_name, last_name',
+    image_size: 'square',  # 50x50, guaranteed ratio
+    secure_image_url: true
+
+  # # G+ Connect
+
+  #   config.omniauth :google_oauth2, ENV["GOOGLE_ID"], ENV["GOOGLE_SECRET"],
+  #     scope: 'https://www.googleapis.com/auth/userinfo.email, https://www.googleapis.com/auth/youtube',
+  #     # info_fields: 'email, channels',
+  #     image_size: 'square',
+  #     secure_image_url: true
+
+  # Uber connect => mais fait a l arrache pour l instant
+  # Rails.application.config.middleware.use OmniAuth::Builder do
+  #   provider :uber, ENV['UBER_CLIENT_ID'], ENV['UBER_CLIENT_SECRET']
+  # end
+  config.omniauth :uber, ENV['UBER_CLIENT_ID'], ENV['UBER_CLIENT_SECRET'],
+    scope: 'request profile history'
 end

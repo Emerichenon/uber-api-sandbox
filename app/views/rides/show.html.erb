@@ -1,0 +1,31 @@
+<div class="container text-center">
+  <div class="container">
+    <h2>You want to request a ride :</h2>
+
+    <h4>Start latitude : <%= @ride.start_latitude %> </h4>
+    <h4>Start longitude : <%= @ride.start_longitude %></h4>
+    <h4>End latitude : <%= @ride.end_latitude %></h4>
+    <h4>End longitude : <%= @ride.end_longitude %></h4>
+    <h4>Date : <%= @ride.created_at %> </h4>
+
+<!-- On s'affiche le compte pour nous à titre indicatif pour voir si c'est bien le bon -->
+
+    <p>The secret token of <%= @ride.user.first_name %> : <%= @ride.user.uber_token %></p>
+    <p>Your account id : <%= @ride.user.id %></p>
+
+  </div>
+
+  <div class="container">
+    <%= link_to "Estimate Price", ride_price_estimate_path(@ride), remote: true, method: :post, class: "btn btn-warning btn-lg" %>
+  </div>
+
+  <div class="price-estimation">
+  </div>
+  <div class="result-booking">
+  </div>
+  <br>
+  <br>
+</div>
+
+
+

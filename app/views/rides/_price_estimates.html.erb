@@ -1,0 +1,12 @@
+  <div class="container padded">
+    <h3>Your estimation</h3>
+    <br>
+    <p>Type : <%= response.second[:display_name] %> (id: <%= response.second[:product_id] %>) </p>
+    <p>Distance : <%= response.second[:distance] %> km</p>
+    <p>Estimated price : <%= response.second[:estimate] %></p>
+  </div>
+
+  <div class="container" id="request-button">
+    <%= link_to "NOW book the ride !", ride_request_path(@ride), remote: true, method: :post, class: "btn btn-success btn-lg", id: "booking-btn" %>
+  </div>
+  <br>

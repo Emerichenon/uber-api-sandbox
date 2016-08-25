@@ -1,0 +1,12 @@
+<div class="container padded">
+  <%= simple_form_for(@ride) do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :start_latitude %>
+    <%= f.input :start_longitude %>
+    <%= f.input :end_latitude %>
+    <%= f.input :end_longitude %>
+
+    <%= f.button :submit %>
+  <% end %>
+</div>

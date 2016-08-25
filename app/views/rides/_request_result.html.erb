@@ -1,0 +1,26 @@
+<div class="padded" id="status-box">
+  <h3>Your Uber is <%= response.status %></h3>
+  <br>
+  <p>id : <%= response.request_id %></p>
+  <p>status : <%= response.status %></p>
+  <% if response.driver %>
+    <p>your driver : <%= response.driver.name %> (<%= response.driver.rating %> <i class="fa fa-star" aria-hidden="true"></i>)</p>
+  <% end %>
+  <p>ETA : <%= response.eta %></p>
+  <% if response.vehicle %>
+    <p>vehicle : <%= response.vehicle.make %> <%= response.vehicle.model %></p>
+  <% end %>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+  <%= link_to "Accepted", ride_edit_status_path(@ride, status: 'accepted'), remote: true, method: :patch, class: "btn btn-primary" %>
+  <%= link_to "Arriving", ride_edit_status_path(@ride, status: 'arriving'), remote: true, method: :patch, class: "btn btn-warning" %>
+  <%= link_to "In Progress", ride_edit_status_path(@ride, status: 'in_progress'), remote: true, method: :patch, class: "btn btn-danger" %>
+  <%= link_to "Completed", ride_edit_status_path(@ride, status: 'completed'), remote: true, method: :patch, class: "btn btn-success" %>
+</div>
+<div class="container padded">
+  <%= link_to "Cancel the ride", ride_cancel_request_path(@ride), remote: true, method: :patch, class: "btn btn-danger btn-lg" %>
+</div>
