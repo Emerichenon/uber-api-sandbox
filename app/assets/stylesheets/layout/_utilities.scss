@@ -29,10 +29,10 @@
 }
 
 .dashboard {
+  background-color: rgb(242,242,242);
   color: rgba(80,80,80, 1);
   border: 1px solid grey;
   padding: 20px;
-  margin-top: 50px;
   border-radius: 4px;
 }
 
@@ -44,3 +44,7 @@
   padding: 10px;
 }
 
+.wrapper {
+  padding: 50px;
+  height: 100vh;
+}

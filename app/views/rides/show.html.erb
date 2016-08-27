@@ -1,4 +1,4 @@
-<div class="container">
+<div class="wrapper bg-grey">
   <div class="dashboard">
     <div class="row">
       <div class="col-xs-12 text-center">
@@ -8,7 +8,11 @@
 
     <div class="row">
       <div class="col-xs-4 text-center">
-        <%= image_tag current_user.uber_picture, class: "avatar-large" %>
+        <% if current_user.uber_picture %>
+          <%= image_tag current_user.uber_picture, class: "avatar-large" %>
+        <% else %>
+          <%= image_tag 'seb.jpg', class: "avatar-large" %>
+        <% end %>
         <h3><%= @ride.user.first_name %></h3>
         <p>My secret token is : <%= @ride.user.uber_token %></p>
       </div>
@@ -25,7 +29,7 @@
 
     <div class="row">
       <div class="text-center button">
-        <%= link_to "Estimate Price", ride_price_estimate_path(@ride), remote: true, method: :post, class: "btn btn-warning btn-lg" %>
+        <%= link_to "Estimate Price", ride_price_estimate_path(@ride), remote: true, method: :post, class: "navbar-wagon-item navbar-wagon-button btn" %>
       </div>
     </div>
   </div>
