@@ -273,11 +273,11 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   # Fb Connect
-  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
-    scope: 'email',
-    info_fields: 'email, first_name, last_name',
-    image_size: 'square',  # 50x50, guaranteed ratio
-    secure_image_url: true
+  # config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
+  #   scope: 'email',
+  #   info_fields: 'email, first_name, last_name',
+  #   image_size: 'square',  # 50x50, guaranteed ratio
+  #   secure_image_url: true
 
   # # G+ Connect
 
