@@ -15,7 +15,7 @@
   background: #4a4a4a;
 }
 .bg-grey {
-  background: #aeaeae;
+  background: rgba(40,40,40, 1);
 }
 .bg-blue {
   background: #00a3e1;
@@ -26,5 +26,21 @@
 
 .status-box {
   border: 2px solid grey;
+}
+
+.dashboard {
+  color: rgba(80,80,80, 1);
+  border: 1px solid grey;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 4px;
+}
+
+.title-card {
+  padding-bottom: 20px;
+}
+
+.button {
+  padding: 10px;
 }
 

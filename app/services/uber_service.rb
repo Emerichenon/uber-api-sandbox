@@ -53,7 +53,7 @@ class UberService
   end
 end
 
-# params = { start_latitude: 48.864667, start_longitude: 2.378838, end_latitude: 48.852115, end_longitude: 2.268011 }
+
 # api_object = UberService.new(moi, params)
 
 

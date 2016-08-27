@@ -1,27 +1,38 @@
-<div class="container text-center">
-  <div class="container">
-    <h2>You want to request a ride :</h2>
+<div class="container">
+  <div class="dashboard">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2 class="title-card">Check the details of your ride request</h2>
+      </div>
+    </div>
 
-    <h4>Start latitude : <%= @ride.start_latitude %> </h4>
-    <h4>Start longitude : <%= @ride.start_longitude %></h4>
-    <h4>End latitude : <%= @ride.end_latitude %></h4>
-    <h4>End longitude : <%= @ride.end_longitude %></h4>
-    <h4>Date : <%= @ride.created_at %> </h4>
+    <div class="row">
+      <div class="col-xs-4 text-center">
+        <%= image_tag current_user.uber_picture, class: "avatar-large" %>
+        <h3><%= @ride.user.first_name %></h3>
+        <p>My secret token is : <%= @ride.user.uber_token %></p>
+      </div>
 
-<!-- On s'affiche le compte pour nous à titre indicatif pour voir si c'est bien le bon -->
+      <div class="col-xs-6 col-xs-offset-2">
+        <br>
+        <p>Start latitude : <%= @ride.start_latitude %> </p>
+        <p>Start longitude : <%= @ride.start_longitude %></p>
+        <p>End latitude : <%= @ride.end_latitude %></p>
+        <p>End longitude : <%= @ride.end_longitude %></p>
+        <p>Requested on <%= @ride.created_at.strftime('%A, %B %d, %Y at %l:%M %p') %> </p>
+      </div>
+    </div>
 
-    <p>The secret token of <%= @ride.user.first_name %> : <%= @ride.user.uber_token %></p>
-    <p>Your account id : <%= @ride.user.id %></p>
-
+    <div class="row">
+      <div class="text-center button">
+        <%= link_to "Estimate Price", ride_price_estimate_path(@ride), remote: true, method: :post, class: "btn btn-warning btn-lg" %>
+      </div>
+    </div>
   </div>
 
-  <div class="container">
-    <%= link_to "Estimate Price", ride_price_estimate_path(@ride), remote: true, method: :post, class: "btn btn-warning btn-lg" %>
+  <div class="price-estimation text-center">
   </div>
-
-  <div class="price-estimation">
-  </div>
-  <div class="result-booking">
+  <div class="result-booking text-center">
   </div>
   <br>
   <br>

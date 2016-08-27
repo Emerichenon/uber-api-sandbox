@@ -1,0 +1,18 @@
+.btn-uber-black {
+  padding: 5px 13px;
+  border-radius: 0em;
+  line-height: 35px;
+  background-color: RGBA(242, 242, 242, 0);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid white;
+  margin: 30px;
+  transition: ease 0.2s;
+}
+
+.btn-uber-black:hover {
+    color: black;
+    background: RGBA(242, 242, 242, 1);
+    border-color: RGBA(242, 242, 242, 1);
+}

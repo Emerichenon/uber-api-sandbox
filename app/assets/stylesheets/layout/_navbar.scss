@@ -1,7 +1,7 @@
 /* Main class */
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  box-shadow: 0 14px 0px 0 rgba(255, 255, 255, 0.07), 0 1px 0 0 rgba(255, 255, 255, 0.03);
+  background: RGBA(242, 242, 242, 1.00);
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
@@ -51,18 +51,21 @@
 /* Navbar right button */
 .navbar-wagon-button {
   margin-left: 10px;
-  padding: 0 20px;
-  border-radius: 20em;
-  line-height: 40px;
-  background-color: #D23333;
-  color: white;
-  font-size: 14px;
-  border: 2px solid #D23333;
+  padding: 1px 12px;
+  border-radius: 0em;
+  line-height: 35px;
+  background-color: RGBA(242, 242, 242, 1.00);
+  color: #0a0a0a;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid #0a0a0a;
+  transition: ease 0.1s;
 }
+
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: rgb(80,80,80);
+  border-color: rgb(80,80,80);
 }
 
 /* Navbar search form */
@@ -101,9 +104,13 @@
 
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
+  background-color: RGBA(242, 242, 242, 1.00);
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
+  box-shadow: 1px 1px 4px RGBA(242, 242, 242, 0.70);
   border-color: #E6E6E6;
+  left: auto;
+  right: 4px !important;
+
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -124,7 +131,7 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: RGBA(242, 242, 242, 0.80);
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;

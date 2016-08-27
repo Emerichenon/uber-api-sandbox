@@ -287,7 +287,7 @@ Devise.setup do |config|
   #     image_size: 'square',
   #     secure_image_url: true
 
-  # Uber connect => mais fait a l arrache pour l instant
+  # Uber connect
   # Rails.application.config.middleware.use OmniAuth::Builder do
   #   provider :uber, ENV['UBER_CLIENT_ID'], ENV['UBER_CLIENT_SECRET']
   # end
