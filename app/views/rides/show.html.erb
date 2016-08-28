@@ -7,17 +7,20 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-4 text-center">
-        <% if current_user.uber_picture %>
-          <%= image_tag current_user.uber_picture, class: "avatar-large" %>
-        <% else %>
-          <%= image_tag 'seb.jpg', class: "avatar-large" %>
-        <% end %>
-        <h3><%= @ride.user.first_name %></h3>
-        <p>My secret token is : <%= @ride.user.uber_token %></p>
+      <div class="col-xs-3 col-xs-offset-1">
+        <div class="text-center">
+          <br>
+          <% if current_user.uber_picture %>
+            <%= image_tag current_user.uber_picture, class: "avatar-large" %>
+          <% else %>
+            <%= image_tag 'seb.jpg', class: "avatar-large" %>
+          <% end %>
+          <h3><%= @ride.user.first_name %></h3>
+          <p>My secret token is : <%= @ride.user.uber_token %></p>
+        </div>
       </div>
 
-      <div class="col-xs-6 col-xs-offset-2">
+      <div class="col-xs-6 col-xs-offset-1" id="ride-details">
         <br>
         <p>Start latitude : <%= @ride.start_latitude %> </p>
         <p>Start longitude : <%= @ride.start_longitude %></p>
@@ -28,8 +31,8 @@
     </div>
 
     <div class="row">
-      <div class="text-center button">
-        <%= link_to "Estimate Price", ride_price_estimate_path(@ride), remote: true, method: :post, class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <div class="text-center button" id="estimate">
+        <%= link_to "ESTIMATE PRICE", ride_price_estimate_path(@ride), remote: true, method: :post, class: "navbar-wagon-item navbar-wagon-button btn" %>
       </div>
     </div>
   </div>
