@@ -9,6 +9,14 @@ GIT
       responders
       warden (~> 1.2.3)
 
+GIT
+  remote: https://github.com/Emerichenon/uber-ruby.git
+  revision: be0c6af1665584951f37ac65ddbb3f4a32cf1cf9
+  specs:
+    uber-ruby (0.6.0)
+      faraday (~> 0.9.0)
+      json (~> 1.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -197,9 +205,6 @@ GEM
     tilt (2.0.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uber-ruby (0.6.1)
-      faraday (~> 0.9.0)
-      json (~> 1.8)
     uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
     warden (1.2.6)
@@ -233,7 +238,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  uber-ruby
+  uber-ruby!
   uglifier
 
 RUBY VERSION

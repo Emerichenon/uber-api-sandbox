@@ -22,5 +22,5 @@
   <%= link_to "Completed", ride_edit_status_path(@ride, status: 'completed'), remote: true, method: :patch, class: "btn btn-success" %>
 </div>
 <div class="container padded">
-  <%= link_to "Cancel the ride", ride_cancel_request_path(@ride), remote: true, method: :patch, class: "btn btn-danger btn-lg" %>
+  <%= link_to "Cancel the ride", ride_cancel_request_path(@ride), remote: true, method: :patch, class: "navbar-wagon-item navbar-wagon-button btn" %>
 </div>

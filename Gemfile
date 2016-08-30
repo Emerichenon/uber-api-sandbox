@@ -11,7 +11,8 @@ gem 'redis'
 
 # Uber connect, Oauth and requests
 gem 'omniauth-uber'
-gem 'uber-ruby', require: 'uber'
+
+gem 'uber-ruby', require: 'uber', git: "https://github.com/Emerichenon/uber-ruby.git"
 
 
 gem 'sass-rails'
